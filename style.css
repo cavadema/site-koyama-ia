@@ -139,8 +139,6 @@ nav {
 }
 
 .logo img {
-    height: 65px;
-    /* Slightly larger as requested */
     width: auto;
     object-fit: contain;
 }
@@ -227,6 +225,12 @@ nav {
     color: var(--text-muted);
     margin-bottom: 24px;
     max-width: 500px;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .hero-image {
@@ -362,30 +366,38 @@ nav {
 
 .app-card {
     background: white;
-    padding: 24px;
+    padding: 32px;
     border-radius: var(--border-radius-sm);
     border: 1px solid #eee;
     transition: var(--transition);
+    text-align: left;
 }
 
 .app-card:hover {
     border-color: var(--primary-orange);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-5px);
+}
+
+.app-icon {
+    color: var(--primary-orange);
+    margin-bottom: 20px;
+}
+
+.app-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--primary-orange);
 }
 
 .app-card h5 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.app-card h5::before {
-    content: '🔥';
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
 }
 
 .app-card p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-muted);
 }
 
@@ -405,18 +417,23 @@ nav {
 }
 
 .logo-item {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: #cbd5e1;
-    letter-spacing: -0.05em;
-    filter: grayscale(1);
     transition: var(--transition);
     cursor: pointer;
+    flex: 0 1 150px;
+    display: flex;
+    justify-content: center;
 }
 
-.logo-item:hover {
-    filter: grayscale(0);
-    color: var(--text-dark);
+.logo-item img {
+    max-width: 100%;
+    max-height: 50px;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.6);
+    transition: var(--transition);
+}
+
+.logo-item:hover img {
+    filter: grayscale(0) opacity(1);
     transform: scale(1.1);
 }
 
@@ -539,4 +556,37 @@ nav {
     .feature-card {
         padding: 24px;
     }
+}
+
+/* Footer Style Fix */
+footer {
+    background-color: #FF7A00 !important;
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
 }
